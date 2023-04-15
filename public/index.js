@@ -12,7 +12,7 @@ socketClient.on('history', data => {
     let history = document.getElementById('history')
     let messages = ''
     data.forEach(item => {
-        messages+= `${item}<br />`
+        messages+= `[${item.userId}] dice: ${item.message}<br />`
     })
     history.innerHTML = messages
 })

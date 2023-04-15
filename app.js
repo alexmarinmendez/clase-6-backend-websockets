@@ -11,10 +11,10 @@ const socketServer = new Server(httpServer)
 let log = []
 
 socketServer.on('connection', (socketClient) => {
-    console.log('Nuevo cliente conectado...')
+    console.log(`Nuevo cliente ${socketClient.id} conectado...`)
     socketClient.on('message', (data) => {
         console.log(`Me enviaron: ${data}`)
-        log.push(data)
+        log.push({ userId: socketClient.id, message: data })
         // socketClient.emit('history', log)
         socketServer.emit('history', log)
     })
