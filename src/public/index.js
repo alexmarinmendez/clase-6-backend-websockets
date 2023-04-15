@@ -17,4 +17,19 @@
 //     history.innerHTML = messages
 // })
 
-console.log('Hola INDEX')
+let socket
+let user = ''
+
+Swal.fire({
+    title: 'Chat de Coder',
+    input: 'text',
+    text: 'Set your username for the chat',
+    inputValidator: value => {
+        return !value.trim() && 'Please write a username'
+    },
+    allowOutsideClick: false
+})
+    .then(result => {
+        user = result.value
+        socket = io()
+    })
