@@ -4,7 +4,8 @@
   "description": "",
   "main": "01-demo-long-polling.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "",

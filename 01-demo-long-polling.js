@@ -7,6 +7,9 @@ const messageEventEmitter = new events.EventEmitter();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static('public'))
+
+let log= []
 
 app.get('/messages', (req, res) => {
     console.log(`${moment()} - Waiting for new message...`);
@@ -19,7 +22,8 @@ app.get('/messages', (req, res) => {
 app.post('/new-message', (req, res) => {
     const {message} = req.body;
     console.log(`${moment()} - New Message - message: ${message}`);
-    messageEventEmitter.emit('newMessage', message);
+    log.push(message)
+    messageEventEmitter.emit('newMessage', log);
     res.send({ok: true, description: 'Message Sent!'});
 });
 
