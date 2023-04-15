@@ -15,6 +15,7 @@ socketServer.on('connection', (socketClient) => {
     socketClient.on('message', (data) => {
         console.log(`Me enviaron: ${data}`)
         log.push(data)
-        socketClient.emit('history', log)
+        // socketClient.emit('history', log)
+        socketServer.emit('history', log)
     })
 })
