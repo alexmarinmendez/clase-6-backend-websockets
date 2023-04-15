@@ -2,7 +2,7 @@
   "name": "clase-6-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "01-demo-long-polling.js",
+  "main": "app.js",
   "scripts": {
     "start": "node .",
     "dev": "nodemon ."
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "moment": "^2.29.4"
+    "moment": "^2.29.4",
+    "socket.io": "^4.6.1"
   }
 }
