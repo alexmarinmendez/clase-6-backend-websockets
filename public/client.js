@@ -1,6 +1,7 @@
 document.querySelector("#msg").addEventListener("change", function() {
     let msg = this.value
     postMessage(msg)
+    this.value = ""
 })
 
 async function postMessage(msg) {

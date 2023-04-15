@@ -22,6 +22,7 @@ app.get('/messages', (req, res) => {
 app.post('/new-message', (req, res) => {
     const {message} = req.body;
     console.log(`${moment()} - New Message - message: ${message}`);
+    console.log(message)
     log.push(message)
     messageEventEmitter.emit('newMessage', log);
     res.send({ok: true, description: 'Message Sent!'});
