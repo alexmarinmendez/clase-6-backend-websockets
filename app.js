@@ -7,3 +7,7 @@ const serverHttp = app.listen(8080, () => console.log('Server Up'))
 app.use(express.static('public'))
 
 const serverSocket = new Server(serverHttp)
+
+serverSocket.on('connection', () => {
+    console.log('Nuevo cliente conectado...')
+})
